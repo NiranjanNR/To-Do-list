@@ -26,9 +26,9 @@ function App() {
   return (
     <div className="text-3xl text-center p-16 bg-zinc-900 text-white">
       <h1 className="text-8xl">To-Do List</h1><br />
-      <div className="justify-center md:mx-56 ">
+      <div className="justify-center lg:mx-60 mx-8">
         {count.map(entry => <div className="flex justify-left p-2">{entry}
-          <button className="ml-auto text-xl text-white bg-stone-500 rounded-lg hover:bg-stone-700 p-1 px-3 ml-4" onClick={remove}>Done</button>
+          <button className="ml-auto text-xl text-white bg-stone-500 rounded-lg hover:bg-stone-700 p-1 px-3 " onClick={remove}>Done</button>
         </div>)}
       </div>
       <input type="text" id='inp' className="text-2xl text-white bg-stone-500 rounded-lg hover:bg-stone-700 px-8 py-2 my-4" onKeyDown={getv} placeholder="Add a task" /><br />
