@@ -4,7 +4,6 @@ import { collection,getDocs,addDoc,deleteDoc,doc } from 'firebase/firestore';
 var i = 2;
 function App() {
 
-  const [Task,setTask]= useState("");
   const listCollectionRef = collection(db , "List");
 
   // DataBase
@@ -14,8 +13,7 @@ function App() {
   }
 
   const createTask = async () => {
-    console.log(Task);
-    await addDoc(listCollectionRef, { Task:Task ,Status:false})
+    await addDoc(listCollectionRef, { Task:value ,Status:false})
   }
 
   useEffect(() =>{
@@ -36,9 +34,8 @@ function App() {
 
   function Change(event) {
     fn = event.target.value;
-    setTask(fn);
     if (event.key === 'Enter' && fn.length > 0) {
-      var sm = [...count, { Task: fn, index: i }];
+      var sm = [...count, { Task:value , index: i }];
       i = i + 1;
       setCount(sm);
       createTask();
@@ -48,7 +45,6 @@ function App() {
 
   const Click = e => {
     e.preventDefault();
-    setTask(value);
     if (value.length !== 0) {
       i = i + 1;
       var sm = [...count, { Task: value, index: i }];
