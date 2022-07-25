@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: rgb(24 ,24 ,27);
+
+@media (min-width: 768px) {
+  body{
+    color: rgb(57, 57, 57);
+    background-image: url(https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    font-family: Proxima Nova, system-ui, sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }}
+@media (max-width: 1100px) {
+  body {
+    color:rgb(57, 57, 57);
+    background-image: url(https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    font-family: Proxima Nova, system-ui, sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }}
+
+.blur-me{
+  background: rgba(0, 0, 0, 0.132);
+
+  backdrop-filter: blur(10px);
+  color: rgba(0, 0, 0, 0.751);
 }
