@@ -71,7 +71,7 @@ function App() {
       <div>
         <h1 className="text-neutral-900 md:text-left text-5xl md:mt-20 lg:text-7xl mb-7 my-3">Write the tasks<br /> you have left to complete</h1>
       </div>
-      <div className="blur-me rounded-3xl p-10 lg:mx-20 ">
+      <div className="blur-me rounded-3xl p-10 text-2xl lg:mx-20 ">
       {count.map((iterate,index) => 
         <div className="flex">{true ? <div className="p-2">{index+1}.</div> :<></>}
         <div className="ml-2 p-2">{iterate.Task}</div>
