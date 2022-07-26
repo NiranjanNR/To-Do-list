@@ -4,9 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run this app by downloading the zip and after installing all the dependencies just type:
 
 ### `npm start`
+
+The resulting page will be as follows:
+
+![Screenshot 2022-07-25 at 7 53 10 PM](https://user-images.githubusercontent.com/84635960/180800184-fb23fd53-7484-4dc0-ac14-afd33bc482f5.png)
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
