@@ -8,15 +8,20 @@ function App() {
   const listCollectionRef = collection(db , "List");
 
   // DataBase
-  const deleteTask = async (id) =>{
+  const deleteTask = async (index,id) =>{
+    console.log(index,id);
     const userDoc =doc(db, "List", id);
     await deleteDoc(userDoc);
+    del(index);
   }
 
   const createTask = async () => {
     await addDoc(listCollectionRef, { Task:value ,Status:false})
   }
-
+  const getList = async () =>{
+    const dat = await getDocs(listCollectionRef);
+    setCount(dat.docs.map((doc)=>({...doc.data(),id:doc.id})))
+  }
   useEffect(() =>{
     const getList = async () =>{
       const dat = await getDocs(listCollectionRef);
@@ -41,6 +46,7 @@ function App() {
       setCount(sm);
       createTask();
       setValue("");
+      getList();
     }
   }
 
@@ -52,14 +58,14 @@ function App() {
       setCount(sm);
       createTask();
       setValue("");
+      getList();
     }
   };
 
-  function del(index,id){
+  function del(index){
 
     const nwTsk = [...count];
     nwTsk.splice(index, 1);
-    deleteTask(id);
     setCount(nwTsk);
 
   }
@@ -75,7 +81,7 @@ function App() {
       {count.map((iterate,index) => 
         <div className="flex">{true ? <div className="p-2">{index+1}.</div> :<></>}
         <div className="ml-2 p-2">{iterate.Task}</div>
-        {true ? <button className="ml-auto text-xl text-white rounded-lg bg-neutral-700/50 hover:bg-neutral-700/75 p-1 px-3 my-2" onClick={() => del(index,iterate.id)}>Delete</button> :<></>}
+        {true ? <button className="ml-auto text-xl text-white rounded-lg bg-neutral-700/50 hover:bg-neutral-700/75 p-1 px-3 my-2" onClick={() => deleteTask(index,iterate.id)}>Delete</button> :<></>}
       </div>)}
       <input  type="text" className="text-center text-xl sm:text-2xl text-black/75 border-2 border-black placeholder:text-black/75 bg-transparent rounded-lg my-4 py-1 md:px-6 md:py-2" value={value} onChange={e => setValue(e.target.value)} onKeyDown={Change} placeholder="Add a task" /><br />
       <button className="text-xl text-white/75 bg-neutral-700/50 hover:bg-neutral-700/75 rounded-lg p-1 px-4 " onClick={Click} >Add</button>
