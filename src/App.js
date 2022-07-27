@@ -55,9 +55,11 @@ function App() {
     if (value.length !== 0) {
       i = i + 1;
       var sm = [...count, { Task: value, index: i }];
+      console.log(count);
       setCount(sm);
       createTask();
       setValue("");
+      console.log(process.env.REACT_APP_API_KEY);
       getList();
     }
   };
