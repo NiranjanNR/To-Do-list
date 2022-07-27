@@ -9,7 +9,7 @@
 /coverage
 
 #key
-src/env
+/src/env
 
 # production
 /build
