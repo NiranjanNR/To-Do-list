@@ -6,7 +6,7 @@ In the project directory, you can either run this app by downloading the zip and
 
 ### `npm start`
 
-Or you can view this page through the link below:
+Or you can view this page through this link:
 https://to-do-list-gamma-seven.vercel.app/
 
 The resulting page will be as follows:
